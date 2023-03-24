@@ -1,24 +1,23 @@
 <script setup>
+import BaseHeader from '@/layouts/BaseHeader.vue';
 </script>
 
 <template>
-  <h1 class="text-3xl">
-    Hello world!
+  <BaseHeader />
 
-    <div class="font-sans font-semibold">
-      <span class="font-medium">
-        Inter
-      </span>
+  <main class="container mx-auto">
+    <h1>
+      Hello world!
+    </h1>
 
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias autem beatae consequatur dolorem dolores, eius eligendi esse explicabo minima molestiae nobis numquam perferendis placeat quo reprehenderit sed totam veritatis!
-    </div>
+    <h2>
+      Hello world!
+    </h2>
 
-    <div class="font-serif font-bold">
-      <span class="font-medium">
-        Literata
-      </span>
+    <h3>
+      Hello world!
+    </h3>
 
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis exercitationem expedita mollitia non. Amet beatae, dolore dolorem doloremque facere nam neque pariatur provident rerum, sapiente sed sit soluta tempora.
-    </div>
-  </h1>
+    <RouterView/>
+  </main>
 </template>

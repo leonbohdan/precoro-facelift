@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: [
     "./index.html",
@@ -11,6 +13,7 @@ module.exports = {
 
     colors: {
       current: 'currentColor',
+      white: colors.white,
       'primary': 'var(--custom-blue-color)',
       'primary2': 'var(--custom-blue2-color)',
       'success': 'var(--custom-green-color)',
