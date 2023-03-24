@@ -5,7 +5,7 @@ import BaseHeader from '@/layouts/BaseHeader.vue';
 <template>
   <BaseHeader />
 
-  <main class="container mx-auto">
+  <main class="md:container md:mx-auto px-4">
     <h1>
       Hello world!
     </h1>
