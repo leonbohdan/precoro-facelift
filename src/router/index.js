@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import CatalogMain from '@/components/catalog/CatalogMain.vue';
-import PricesPage from '@/components/PricesPage.vue';
+import PricesMain from '@/components/prices/PricesMain.vue';
 
 const routes = [
   {
@@ -10,7 +10,7 @@ const routes = [
   }, {
     path: '/prices',
     name: 'price-page',
-    component: PricesPage,
+    component: PricesMain,
   },
 ];
 

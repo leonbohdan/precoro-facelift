@@ -52,9 +52,3 @@ const isActiveFilter = computed(() => {
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.active {
-  color: var(--custom-blue-color);
-}
-</style>

@@ -19,7 +19,7 @@ const handleDirection = (direction) => {
       </svg>
     </span>
 
-    <span class="px-[115px] md:px-[125px] text-small text-c-gray2">
+    <span class="px-[110px] md:px-[125px] text-small text-c-gray2 whitespace-nowrap">
       1 of 3
     </span>
 

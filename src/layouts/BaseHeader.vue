@@ -45,7 +45,7 @@ const isCatalogPage = computed(() => {
             :class="['btn rounded-r-3xl min-w-[50%] md:min-w-[100px]', {'active': !isCatalogPage }]"
             @click="handleActivePage('price')"
           >
-            Price
+            Prices
           </button>
         </div>
       </div>
