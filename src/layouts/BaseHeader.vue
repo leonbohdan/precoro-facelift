@@ -23,18 +23,18 @@ const isCatalogPage = computed(() => {
 
 <template>
   <header>
-    <nav class="md:container md:mx-auto px-4 py-2 lg:flex lg:items-center lg:justify-between">
+    <nav class="md:container md:mx-auto px-4 py-2 md:flex md:items-center md:justify-between">
       <div class="min-w-0 flex-1">
         <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
           Precoro facelift
         </h2>
       </div>
 
-      <div class="mt-5 flex lg:mt-0 lg:ml-4">
-        <div class="border-solid border-2 border-primary rounded-3xl">
+      <div class="mt-5 flex md:mt-0 md:ml-4">
+        <div class="border-solid border-2 border-primary rounded-3xl w-full md:w-auto">
           <button 
             type="button" 
-            :class="['btn rounded-l-3xl min-w-[100px]', {'active': isCatalogPage}]"
+            :class="['btn rounded-l-3xl min-w-[50%] md:min-w-[100px]', {'active': isCatalogPage}]"
             @click="handleActivePage('catalog')"
           >
             Catalog
@@ -42,7 +42,7 @@ const isCatalogPage = computed(() => {
 
           <button 
             type="button" 
-            :class="['btn rounded-r-3xl min-w-[100px]', {'active': !isCatalogPage }]"
+            :class="['btn rounded-r-3xl min-w-[50%] md:min-w-[100px]', {'active': !isCatalogPage }]"
             @click="handleActivePage('price')"
           >
             Price

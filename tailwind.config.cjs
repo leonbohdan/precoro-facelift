@@ -19,6 +19,7 @@ module.exports = {
       'success': 'var(--custom-green-color)',
       'c-black': 'var(--custom-black-color)',
       'c-gray': 'var(--custom-gray-color)',
+      'c-gray2': 'var(--custom-gray2-color)',
       'bg-blue': 'var(--custom-blue-bg)',
       'bgh-blue': 'var(--custom-blue-bg-hover)',
       'bg-blue2': 'var(--custom-blue-bg2)',
@@ -27,7 +28,11 @@ module.exports = {
       'bgh-green': 'var(--custom-green-bg-hover)',
     },
 
-    extend: {},
+    extend: {
+      boxShadow: {
+        'c-box': '0 4px 4px rgba(0, 4, 98, 0.04)',
+      },
+    },
   },
   plugins: [],
 }

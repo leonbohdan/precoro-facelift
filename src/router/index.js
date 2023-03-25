@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import CatalogPage from '@/components/CatalogPage.vue';
+import CatalogMain from '@/components/catalog/CatalogMain.vue';
 import PricesPage from '@/components/PricesPage.vue';
 
 const routes = [
   {
     path: '/catalog',
     name: 'catalog',
-    component: CatalogPage,
+    component: CatalogMain,
   }, {
     path: '/prices',
     name: 'price-page',

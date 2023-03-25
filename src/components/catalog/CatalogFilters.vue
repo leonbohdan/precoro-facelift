@@ -17,10 +17,6 @@ const isActiveFilter = computed(() => {
 </script>
 
 <template>
-  <h2>
-    Catalog
-  </h2>
-
   <div class="flex relative">
     <div class="flex text-c-gray overflow-x-auto">
       <span v-for="(filter, i) in filters" :key="i" class="flex">
@@ -55,13 +51,9 @@ const isActiveFilter = computed(() => {
       ><path stroke="#4545F5" stroke-width="1.5" d="M1 1.5 7.5 8 1 14.5"/></svg>
     </div>
   </div>
-
-  <div>Products</div>
-
-  <div>Swipe slide</div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .active {
   color: var(--custom-blue-color);
 }
