@@ -1,6 +1,7 @@
 <script setup>
 import CatalogFilters from '@/components/catalog/CatalogFilters.vue';
 import CatalogProducts from '@/components/catalog/CatalogProducts.vue';
+import CatalogPagination from '@/components/catalog/CatalogPagination.vue';
 </script>
 
 <template>
@@ -12,5 +13,5 @@ import CatalogProducts from '@/components/catalog/CatalogProducts.vue';
 
   <CatalogProducts class="mb-10"/>
 
-  <div>Swipe slide</div>
+  <CatalogPagination />
 </template>
