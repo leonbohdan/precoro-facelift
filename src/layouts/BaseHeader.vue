@@ -1,8 +1,10 @@
 <script setup>
 import { computed, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 
 const router = useRouter();
+const route = useRoute();
 
 const activePage = ref('catalog');
 
@@ -17,7 +19,7 @@ const handleActivePage = (page) => {
 };
 
 const isCatalogPage = computed(() => {
-  return activePage.value === 'catalog';
+  return activePage.value === 'catalog' && route.path === '/catalog';
 });
 </script>
 

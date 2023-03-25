@@ -82,13 +82,13 @@ const isActiveCurrency = computed(() => {
 </script>
 
 <template>
-  <div class="flex md:justify-between flex-col md:flex-row items-center justify-center mb-10 md:mb-[60px]">
-    <h3 class="md:max-w-[300px] text-center md:text-start mb-6 md:mb-0">
+  <div class="grid grid-cols-1 md:grid-cols-[_1fr,_2fr] mb-10 md:mb-[60px] md:min-h-[80px]">
+    <h3 class="text-center md:text-start mb-6 md:mb-0">
       Estimate your investment
     </h3>
 
-    <div class="md:max-w-[620px] md:w-full flex flex-col items-end">
-      <div class="flex text-c-gray mb-10 md:mb-0">
+    <div class="flex flex-col md:items-end md:justify-between">
+      <div class="flex justify-center text-c-gray mb-10 md:mb-0">
         <span
           :class="[
             'p-1 text-default hover:cursor-pointer hover:text-primary whitespace-nowrap transition ease-in-out delay-150 last:pr-0',

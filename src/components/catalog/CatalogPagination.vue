@@ -5,7 +5,7 @@ const handleDirection = (direction) => {
 </script>
 
 <template>
-  <div class="flex items-center justify-center mb-8">
+  <div class="flex items-center justify-center pb-8">
     <span class="hover:cursor-pointer" @click="handleDirection('prev')">
       <svg
         xmlns="http://www.w3.org/2000/svg"

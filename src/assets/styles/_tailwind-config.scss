@@ -16,10 +16,10 @@
 
 @layer components {
   .btn {
-    @apply py-2 px-4 font-semibold;
+    @apply py-2 px-4 font-semibold bg-white hover:bg-primary hover:text-white transition ease-in-out delay-150;
 
     &.active {
-      @apply bg-primary text-white
+      @apply bg-primary text-white;
     }
   }
 
