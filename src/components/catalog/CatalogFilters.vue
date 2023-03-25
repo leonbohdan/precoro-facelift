@@ -3,7 +3,7 @@ import { computed, ref } from 'vue';
 
 const activeFilter = ref('All');
 
-const filters = ['All', 'SMB', 'Enterprise', 'Biotech', 'Textile Testing & Certification', 'Insurance', 'Transport & Logistics', 'Information Technology', 'Other'];
+const filters = ['All', 'SMB', 'Enterprise', 'Biotech', 'Textile Testing & Certification', 'Insurance', 'Travel & Tourism, Leisure', 'Transport & Logistics', 'Information Technology', 'Other'];
 
 const handleActiveFilter = (filter) => {
   activeFilter.value = filter;
@@ -56,9 +56,5 @@ const isActiveFilter = computed(() => {
 <style lang="scss" scoped>
 .active {
   color: var(--custom-blue-color);
-}
-
-.filter-tags-bg {
-  background: linear-gradient(90deg, rgba(217,217,217,0) 90%, rgba(255,255,255,1) 98%);
 }
 </style>
