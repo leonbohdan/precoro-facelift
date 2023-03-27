@@ -97,13 +97,14 @@ const chosenSliderPercentStyle = computed(() => {
 const handleInputDescriptionStyle = computed(() => {
   return (place) => {
     const top = 20;
-    const bottom = 5;
+    const bottom = 0;
 
     const type = place === 'top' ? top : bottom;
+    const typeParam = place === 'top' ? 0.5 : 0.6;
 
     const
       newValue = Number( (chosenUsers.value - 2) * 100 / (maxSliderValue - minSliderValue) ),
-      newPosition = type - (newValue * 0.5);
+      newPosition = type - (newValue * typeParam);
 
     return `left: calc(${newValue}% + ${newPosition}px)`;
   };
@@ -120,12 +121,17 @@ const handleChosenUsers = computed(() => {
 });
 
 const handlePrice = computed(() => {
-  return chosenUsers.value * pricePerUser;
+  return currencyFormatter.format(chosenUsers.value * pricePerUser);
 });
 
 const handleChosenPlan = (plan) => {
   alert(`You have chosen plan for the ${plan === 'small' ? 'small' : 'large'} team!`);
 };
+
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
 </script>
 
 <template>
@@ -184,7 +190,7 @@ const handleChosenPlan = (plan) => {
           class="absolute -bottom-[10px] title-small bg-white"
           :style="handleInputDescriptionStyle('bottom')"
         >
-          ${{ handlePrice }}/year
+          {{ handlePrice }}/year
         </span>
 
         <template v-if="isMoreThan20">
