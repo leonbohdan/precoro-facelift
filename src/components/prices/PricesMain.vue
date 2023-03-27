@@ -8,7 +8,7 @@ const chosenUsers = ref(0);
 
 <template>
   <div class="p-[20px] md:p-[40px] bg-white rounded-lg">
-    <PricesEstimationHeader @update-users="chosenUsers = Number($event)"/>
+    <PricesEstimationHeader @update-users="chosenUsers = $event"/>
 
     <PricesPlanDescription :chosen-users="chosenUsers"/>
   </div>

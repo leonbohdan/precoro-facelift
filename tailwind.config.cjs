@@ -17,6 +17,7 @@ module.exports = {
       'primary': 'var(--custom-blue-color)',
       'primary-hover': 'var(--custom-blue-color-hover)',
       'primary2': 'var(--custom-blue2-color)',
+      'primary3': 'var(--custom-blue3-color)',
       'success': 'var(--custom-green-color)',
       'c-black': 'var(--custom-black-color)',
       'c-gray': 'var(--custom-gray-color)',
@@ -35,6 +36,7 @@ module.exports = {
     extend: {
       boxShadow: {
         'c-box': '0 4px 4px rgba(0, 4, 98, 0.04)',
+        'select-box': '0 4px 16px rgba(0, 0, 0, 0.16)',
       },
     },
   },

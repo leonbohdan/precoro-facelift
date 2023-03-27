@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref, watch } from 'vue';
+import PricesSelectPlans from '@/components/prices/PricesSelectPlans.vue';
 
 const emits = defineEmits(['update-users']);
 
@@ -11,72 +12,10 @@ const activeCurrency = ref('USD');
 const chosenUsers = ref(0);
 
 watch(chosenUsers, (value) => {
-  emits('update-users', value);
+  if (value > 22) {
+    emits('update-users', value);
+  }
 });
-
-const selectOptions = [
-  {
-    name: `1 user | $${pricePerUser}/year`,
-    value: 1,
-  },{
-    name: `2 user | $${2 * pricePerUser}/year`,
-    value: 2,
-  },{
-    name: `3 user | $${3 * pricePerUser}/year`,
-    value: 3,
-  },{
-    name: `4 user | $${4 * pricePerUser}/year`,
-    value: 4,
-  },{
-    name: `5 user | $${5 * pricePerUser}/year`,
-    value: 5,
-  },{
-    name: `6 user | $${6 * pricePerUser}/year`,
-    value: 6,
-  },{
-    name: `7 user | $${7 * pricePerUser}/year`,
-    value: 7,
-  },{
-    name: `8 user | $${8 * pricePerUser}/year`,
-    value: 8,
-  },{
-    name: `9 user | $${9 * pricePerUser}/year`,
-    value: 9,
-  },{
-    name: `10 user | $${10 * pricePerUser}/year`,
-    value: 10,
-  },{
-    name: `11 user | $${11 * pricePerUser}/year`,
-    value: 11,
-  },{
-    name: `12 user | $${12 * pricePerUser}/year`,
-    value: 12,
-  },{
-    name: `13 user | $${13 * pricePerUser}/year`,
-    value: 13,
-  },{
-    name: `14 user | $${14 * pricePerUser}/year`,
-    value: 14,
-  },{
-    name: `15 user | $${15 * pricePerUser}/year`,
-    value: 15,
-  },{
-    name: `16 user | $${16 * pricePerUser}/year`,
-    value: 16,
-  },{
-    name: `17 user | $${17 * pricePerUser}/year`,
-    value: 17,
-  },{
-    name: `18 user | $${18 * pricePerUser}/year`,
-    value: 18,
-  },{
-    name: `19 user | $${19 * pricePerUser}/year`,
-    value: 19,
-  },{
-    name: `20 user | $${20 * pricePerUser}/year`,
-    value: 20,
-  },
-];
 
 const handleActiveCurrency = (currency) => {
   activeCurrency.value = currency;
@@ -226,7 +165,7 @@ const currencyFormatter = new Intl.NumberFormat('en-US', {
         </template>
 
         <input
-          v-model="chosenUsers"
+          v-model.number="chosenUsers"
           type="range"
           :min="minSliderValue"
           :max="maxSliderValue"
@@ -257,15 +196,12 @@ const currencyFormatter = new Intl.NumberFormat('en-US', {
           How many users?
         </div>
 
-        <select id="" v-model="chosenUsers" name="select">
-          <option
-            v-for="({name, value}, i) in selectOptions"
-            :key="i"
-            :value="value"
-          >
-            {{ name }}
-          </option>
-        </select>
+        <PricesSelectPlans
+          v-model.number="chosenUsers"
+          :price-per-user="pricePerUser"
+          :currency-formatter="currencyFormatter"
+          @update:model-value="chosenUsers = +$event"
+        />
       </div>
     </div>
   </div>
