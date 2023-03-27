@@ -4,7 +4,7 @@ import PricesMain from '@/components/prices/PricesMain.vue';
 
 const routes = [
   {
-    path: '/catalog',
+    path: '/',
     name: 'catalog',
     component: CatalogMain,
   }, {

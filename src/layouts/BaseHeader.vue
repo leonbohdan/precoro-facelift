@@ -11,7 +11,7 @@ const activePage = ref('catalog');
 const handleActivePage = (page) => {
   if (page === 'catalog') {
     activePage.value = 'catalog';
-    router.push('/catalog');
+    router.push('/');
   } else {
     activePage.value = 'price';
     router.push('/prices');
@@ -19,7 +19,7 @@ const handleActivePage = (page) => {
 };
 
 const isCatalogPage = computed(() => {
-  return activePage.value === 'catalog' && route.path === '/catalog';
+  return activePage.value === 'catalog' && route.path === '/';
 });
 </script>
 
