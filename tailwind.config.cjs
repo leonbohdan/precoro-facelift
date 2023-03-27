@@ -23,6 +23,7 @@ module.exports = {
       'c-gray2': 'var(--custom-gray2-color)',
       'c-gray3': 'var(--custom-gray3-color)',
       'c-gray4': 'var(--custom-gray4-color)',
+      'c-gray5': 'var(--custom-gray5-color)',
       'bg-blue': 'var(--custom-blue-bg)',
       'bgh-blue': 'var(--custom-blue-bg-hover)',
       'bg-blue2': 'var(--custom-blue-bg2)',
