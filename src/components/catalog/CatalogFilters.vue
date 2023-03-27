@@ -24,7 +24,7 @@ const isActiveFilter = computed(() => {
           :class="[
             'p-3 text-default hover:cursor-pointer hover:text-primary whitespace-nowrap transition ease-in-out delay-150',
             { 'first:pl-0': i === 0 },
-            { 'active': isActiveFilter(filter) },
+            { 'active-filter': isActiveFilter(filter) },
           ]"
           @click="handleActiveFilter(filter)"
         >

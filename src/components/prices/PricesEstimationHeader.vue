@@ -92,7 +92,7 @@ const isActiveCurrency = computed(() => {
         <span
           :class="[
             'p-1 text-default hover:cursor-pointer hover:text-primary whitespace-nowrap transition ease-in-out delay-150 last:pr-0',
-            { 'active': isActiveCurrency('USD') },
+            { 'active-filter': isActiveCurrency('USD') },
           ]"
           @click="handleActiveCurrency('USD')"
         >
@@ -104,7 +104,7 @@ const isActiveCurrency = computed(() => {
         <span
           :class="[
             'p-1 text-default hover:cursor-pointer hover:text-primary whitespace-nowrap transition ease-in-out delay-150 last:pr-0',
-            { 'active': isActiveCurrency('EUR') },
+            { 'active-filter': isActiveCurrency('EUR') },
           ]"
           @click="handleActiveCurrency('EUR')"
         >
@@ -116,7 +116,7 @@ const isActiveCurrency = computed(() => {
         <span
           :class="[
             'p-1 text-default hover:cursor-pointer hover:text-primary whitespace-nowrap transition ease-in-out delay-150 last:pr-0',
-            { 'active': isActiveCurrency('GBP') },
+            { 'active-filter': isActiveCurrency('GBP') },
           ]"
           @click="handleActiveCurrency('GBP')"
         >

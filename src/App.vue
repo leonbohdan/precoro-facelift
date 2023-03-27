@@ -14,7 +14,7 @@ const handleBgColor = computed(() => {
   <div :class="['relative min-h-screen', {'bg-price': handleBgColor}]">
     <BaseHeader />
 
-    <main class="md:container md:mx-auto px-4 relative z-10">
+    <main class="md:container md:mx-auto px-4 md:px-0 pb-4 md:pb-0 relative z-10">
       <RouterView/>
     </main>
 
@@ -22,8 +22,8 @@ const handleBgColor = computed(() => {
       v-if="handleBgColor"
       xmlns="http://www.w3.org/2000/svg"
       width="1440"
-      height="1020"
-      viewBox="0 0 1440 1020"
+      height="1000"
+      viewBox="0 0 1440 1000"
       fill="none"
       class="absolute inset-0 z-0 pointer-events-none hidden md:block"
     >

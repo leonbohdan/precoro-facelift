@@ -1,4 +1,6 @@
 <script setup>
+import { computed, ref } from 'vue';
+
 const plansDescription = [
   'Direct integration with QuickBooks or Xero',
   'Unlimited custom fields & workflows',
@@ -13,14 +15,20 @@ const plansDescription = [
   'Budgets',
 ];
 
+const users = ref(10);
+
 const openAllFeatures = () => {
   alert('Open all features!');
 };
+
+const isSmallTeam = computed(() => {
+  return users.value > 20;
+});
 </script>
 
 <template>
   <div class="grid grid-cols-1 md:grid-cols-[_1fr,_2fr]">
-    <div>
+    <div class="pt-8 pr-1">
       <div class="title text-c-black mb-6">
         All plans include:
       </div>
@@ -48,7 +56,7 @@ const openAllFeatures = () => {
 
       <div class="flex items-center group hover:cursor-pointer mt-6">
         <span
-          class="text-default font-bold text-primary group-hover:opacity-80 transition ease-in-out delay-150"
+          class="text-default font-bold text-primary group-hover:text-primary-hover transition ease-in-out delay-150"
           @click="openAllFeatures"
         >
           See all features
@@ -60,7 +68,7 @@ const openAllFeatures = () => {
           height="12"
           viewBox="0 0 8 12"
           fill="none"
-          class="ml-[10px] group-hover:opacity-80 group-hover:translate-x-1 stroke-[#4545F5] transition ease-in-out delay-150"
+          class="ml-[10px] group-hover:translate-x-1 stroke-primary group-hover:stroke-primary-hover transition ease-in-out delay-150"
         >
           <path d="M1 1L6 6L1 11" stroke-width="2"/>
         </svg>
@@ -68,25 +76,40 @@ const openAllFeatures = () => {
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2">
-      <div class="flex flex-col justify-between items-center rounded-lg">
-        <div>
+      <div
+        :class="[
+          'flex flex-col justify-between items-center rounded-lg p-6 md:py-8 active-plan',
+          {'opacity-25 pointer-events-none': isSmallTeam}
+        ]"
+      >
+        <div class="title text-c-black text-center mb-1">
           For smaller teams
         </div>
 
-        <div>
+        <div class="title-small text-c-gray text-center mb-6">
           with ≤20 users
         </div>
 
-        <div>
+        <h1 class="mb-3">
           $35
+        </h1>
+
+        <div class="text-default text-c-gray text-center mb-10">
+          per user per month <br> billed annually
         </div>
 
-        <div>
-          per user per month billed annually
-        </div>
-
-        <button>
+        <button class="btn-primary mb-[60px] group">
           Get Started
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="ml-2 min-w-[16px] group-hover:translate-x-1 transition ease-in-out delay-150"
+          >
+            <path d="M6 3L11 8L6 13" stroke="white" stroke-width="2"/>
+          </svg>
         </button>
 
         <svg
@@ -103,28 +126,42 @@ const openAllFeatures = () => {
           <path fill-rule="evenodd" clip-rule="evenodd" d="M20.7087 92.6406C13.3662 92.6406 7.41699 98.5898 7.41699 105.932V112.417C7.41699 113.245 6.74542 113.917 5.91699 113.917C5.08857 113.917 4.41699 113.245 4.41699 112.417V105.932C4.41699 96.933 11.7093 89.6406 20.7087 89.6406H25.4479C26.2763 89.6406 26.9479 90.3122 26.9479 91.1406C26.9479 91.9691 26.2763 92.6406 25.4479 92.6406H20.7087Z" fill="#D2DEEE"/>
           <path fill-rule="evenodd" clip-rule="evenodd" d="M37.9062 102.944C37.9062 90.6785 47.8492 80.7355 60.1146 80.7355H81.882C94.1473 80.7355 104.09 90.6785 104.09 102.944V112.416C104.09 113.245 103.419 113.916 102.59 113.916C101.762 113.916 101.09 113.245 101.09 112.416V102.944C101.09 92.3353 92.4905 83.7355 81.882 83.7355H60.1146C49.5061 83.7355 40.9062 92.3353 40.9062 102.944V112.416C40.9062 113.245 40.2347 113.916 39.4062 113.916C38.5778 113.916 37.9062 113.245 37.9062 112.416V102.944Z" fill="#D2DEEE"/>
         </svg>
-
       </div>
 
-      <div class="flex flex-col justify-between items-center rounded-lg">
-        <div>
+      <div
+        :class="[
+          'flex flex-col justify-between items-center rounded-lg p-6 md:py-8 active-plan',
+          {'opacity-25 pointer-events-none': !isSmallTeam}
+        ]"
+      >
+        <div class="title text-c-black text-center mb-1">
           For larger teams
         </div>
 
-        <div>
+        <div class="title-small text-c-gray text-center mb-6">
           with >20 users
         </div>
 
-        <div>
-          Individually tailored pricing
-        </div>
+        <h3 class="text-center mb-3">
+          Individually <br> tailored pricing
+        </h3>
 
-        <div>
+        <div class="text-default text-c-gray mb-10">
           billed annually
         </div>
 
-        <button>
+        <button class="btn-primary mb-[60px] group">
           Get a Custom Quote
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="ml-2 min-w-[16px] group-hover:translate-x-1 transition ease-in-out delay-150"
+          >
+            <path d="M6 3L11 8L6 13" stroke="white" stroke-width="2"/>
+          </svg>
         </button>
 
         <svg
@@ -143,7 +180,6 @@ const openAllFeatures = () => {
           <path fill-rule="evenodd" clip-rule="evenodd" d="M60.6289 88.7583C60.6289 87.9357 61.2958 87.2688 62.1184 87.2688H79.8758C80.6985 87.2688 81.3653 87.9357 81.3653 88.7583C81.3653 89.5809 80.6985 90.2478 79.8758 90.2478H62.1184C61.2958 90.2478 60.6289 89.5809 60.6289 88.7583Z" fill="#D2DEEE"/>
           <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3203 124.272C10.3203 123.45 10.9872 122.783 11.8098 122.783H130.192C131.015 122.783 131.682 123.45 131.682 124.272C131.682 125.095 131.015 125.762 130.192 125.762H11.8098C10.9872 125.762 10.3203 125.095 10.3203 124.272Z" fill="#D2DEEE"/>
         </svg>
-
       </div>
     </div>
   </div>

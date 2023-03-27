@@ -67,7 +67,7 @@ const handleFilter = (filterName) => {
 
         <div class="flex items-center group hover:cursor-pointer">
           <span
-            class="text-default font-bold text-primary group-hover:opacity-80 transition ease-in-out delay-150"
+            class="text-default font-bold text-primary group-hover:text-primary-hover transition ease-in-out delay-150"
             @click="openStory"
           >
             Read story
@@ -79,7 +79,7 @@ const handleFilter = (filterName) => {
             height="12"
             viewBox="0 0 8 12"
             fill="none"
-            class="ml-[10px] group-hover:opacity-80 group-hover:translate-x-1 stroke-[#4545F5] transition ease-in-out delay-150"
+            class="ml-[10px] group-hover:translate-x-1 stroke-primary group-hover:stroke-primary-hover transition ease-in-out delay-150"
           >
             <path d="M1 1L6 6L1 11" stroke-width="2"/>
           </svg>
