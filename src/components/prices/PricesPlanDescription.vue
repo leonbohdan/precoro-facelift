@@ -28,7 +28,7 @@ const isSmallTeam = computed(() => {
 
 <template>
   <div class="grid grid-cols-1 md:grid-cols-[_1fr,_2fr]">
-    <div class="pt-8 pr-1">
+    <div class="pt-0 md:pt-8 md:pr-1 order-last md:order-first">
       <div class="title text-c-black mb-6">
         All plans include:
       </div>
@@ -78,7 +78,7 @@ const isSmallTeam = computed(() => {
     <div class="grid grid-cols-1 md:grid-cols-2">
       <div
         :class="[
-          'flex flex-col justify-between items-center rounded-lg p-6 md:py-8 active-plan',
+          'flex flex-col justify-between items-center rounded-lg p-6 md:py-8 mb-5 md:mb-0 active-plan',
           {'opacity-25 pointer-events-none': isSmallTeam}
         ]"
       >
@@ -130,7 +130,7 @@ const isSmallTeam = computed(() => {
 
       <div
         :class="[
-          'flex flex-col justify-between items-center rounded-lg p-6 md:py-8 active-plan',
+          'flex flex-col justify-between items-center rounded-lg p-6 md:py-8 mb-8 md:mb-0 active-plan',
           {'opacity-25 pointer-events-none': !isSmallTeam}
         ]"
       >
