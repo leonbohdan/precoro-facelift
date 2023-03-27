@@ -95,14 +95,18 @@ const chosenSliderPercentStyle = computed(() => {
 });
 
 const handleInputDescriptionStyle = computed(() => {
-  const
-    newValue = Number( (chosenUsers.value - minSliderValue) * 100 / (maxSliderValue - minSliderValue) ),
-    newPosition = 10 - (newValue * 0.2);
-    // percent = (chosenUsers.value / maxSliderValue) * 100;
+  return (place) => {
+    const top = 20;
+    const bottom = 5;
 
-  return `left: calc(${newValue}% + ${newPosition}px)`;
+    const type = place === 'top' ? top : bottom;
 
-  // return `left: calc(${percent}% - 20px)`;
+    const
+      newValue = Number( (chosenUsers.value - 2) * 100 / (maxSliderValue - minSliderValue) ),
+      newPosition = type - (newValue * 0.5);
+
+    return `left: calc(${newValue}% + ${newPosition}px)`;
+  };
 });
 
 const isMoreThan20 = computed(() => {
@@ -170,7 +174,7 @@ const handleChosenPlan = (plan) => {
       <div class="relative hidden md:block md:w-full">
         <span
           class="absolute -top-[40px] text-[18px] leading-[28px] font-sans font-medium bg-white"
-          :style="handleInputDescriptionStyle"
+          :style="handleInputDescriptionStyle('top')"
         >
           {{ handleChosenUsers }}
         </span>
@@ -178,7 +182,7 @@ const handleChosenPlan = (plan) => {
         <span
           v-if="!isMoreThan20"
           class="absolute -bottom-[10px] title-small bg-white"
-          :style="handleInputDescriptionStyle"
+          :style="handleInputDescriptionStyle('bottom')"
         >
           ${{ handlePrice }}/year
         </span>
@@ -309,12 +313,6 @@ input[type=range]::-webkit-slider-thumb {
   background: var(--custom-blue-color);
   margin-top: -7px;
 }
-
-//input[type=range]::-webkit-slider-thumb:before {
-//  content: 'hehedfgdfgdfgdfgdf';
-//  position: absolute;
-//  top: 0;
-//}
 
 input[type=range]::-moz-range-thumb {
   height: 20px;
