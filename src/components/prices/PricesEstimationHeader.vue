@@ -12,7 +12,7 @@ const activeCurrency = ref('USD');
 const chosenUsers = ref(0);
 
 watch(chosenUsers, (value) => {
-  if (value > 22) {
+  if (value <= 21) {
     emits('update-users', value);
   }
 });
