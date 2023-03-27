@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
+import { onClickOutside } from '@vueuse/core';
 
 const props = defineProps({
   modelValue: {
@@ -11,6 +12,8 @@ const props = defineProps({
     default: 0,
   },
 });
+
+const selectButtonRef = ref(null);
 
 const emits = defineEmits(['update:model-value']);
 
@@ -111,11 +114,16 @@ const handleChosenSelectValue = (value) => {
 const handleChosenPlan = (plan) => {
   alert(`You have chosen plan for the ${plan === 'small' ? 'small' : 'large'} team!`);
 };
+
+onClickOutside(selectButtonRef, () => {
+  isSelectOpen.value = false;
+});
 </script>
 
 <template>
   <div class="relative w-full">
     <button
+      ref="selectButtonRef"
       type="button"
       :class="[
         'flex w-full items-center justify-between rounded bg-white p-2',
