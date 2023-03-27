@@ -8,7 +8,7 @@ function resolve(dir) {
 }
 
 export default defineConfig({
-  base: '/precoro-facelift/',
+  base: '/precoro-facelift/catalog',
   plugins: [
     vue(),
     eslint({
