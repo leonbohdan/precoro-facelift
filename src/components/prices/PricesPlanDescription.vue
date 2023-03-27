@@ -1,5 +1,12 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
+
+const props = defineProps({
+  chosenUsers: {
+    type: Number,
+    default: 0,
+  },
+});
 
 const plansDescription = [
   'Direct integration with QuickBooks or Xero',
@@ -15,8 +22,6 @@ const plansDescription = [
   'Budgets',
 ];
 
-const users = ref(10);
-
 const openAllFeatures = () => {
   alert('Open all features!');
 };
@@ -26,7 +31,7 @@ const handleChosenPlan = (plan) => {
 };
 
 const isSmallTeam = computed(() => {
-  return users.value > 20;
+  return props.chosenUsers > 20;
 });
 </script>
 
