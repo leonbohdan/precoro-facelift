@@ -21,6 +21,10 @@ const openAllFeatures = () => {
   alert('Open all features!');
 };
 
+const handleChosenPlan = (plan) => {
+  alert(`You have chosen plan for the ${plan === 'small' ? 'small' : 'large'} team!`);
+};
+
 const isSmallTeam = computed(() => {
   return users.value > 20;
 });
@@ -98,7 +102,7 @@ const isSmallTeam = computed(() => {
           per user per month <br> billed annually
         </div>
 
-        <button class="btn-primary mb-[60px] group">
+        <button class="btn-primary mb-[60px] group" @click="handleChosenPlan('small')">
           Get Started
           <svg
             width="16"
@@ -150,7 +154,7 @@ const isSmallTeam = computed(() => {
           billed annually
         </div>
 
-        <button class="btn-primary mb-[60px] group">
+        <button class="btn-primary mb-[60px] group" @click="handleChosenPlan('large')">
           Get a Custom Quote
           <svg
             width="16"
